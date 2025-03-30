@@ -1,3 +1,0 @@
-C:/Users/royna/CLionProjects/Ex1_New/cmake-build-debug/CMakeFiles/Ex1_New.dir
-C:/Users/royna/CLionProjects/Ex1_New/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/royna/CLionProjects/Ex1_New/cmake-build-debug/CMakeFiles/rebuild_cache.dir
