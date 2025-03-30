@@ -1,39 +1,23 @@
-# Project setup
 CXX = g++
 CXXFLAGS = -std=c++20 -Wall -Wextra -g
-TARGET = Ex1_New
+TARGET = Ex1
 
-# Source files
-SRCS = main.cpp \
-       Graph.cpp \
-       Algorithms.cpp \
-       Queue.cpp \
-       UnionFind.cpp
-
-# Header dependencies
-HEADERS = Graph.hpp \
-          Algorithms.hpp \
-          Queue.hpp \
-          UnionFind.hpp
-
-# Object files (replace .cpp with .o)
+SRCS = main.cpp Graph.cpp Algorithms.cpp Queue.cpp UnionFind.cpp
+HEADERS = Graph.hpp Algorithms.hpp Queue.hpp UnionFind.hpp
 OBJS = $(SRCS:.cpp=.o)
 
-# Default rule
 all: $(TARGET)
 
-# Link the target
 $(TARGET): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
-# Compile source files
 %.o: %.cpp $(HEADERS)
-	$(CXX) $(CXXFLAGS) -c $<
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Run valgrind on the built executable
 valgrind: $(TARGET)
 	valgrind --leak-check=full --track-origins=yes ./$(TARGET)
 
-# Clean build files
 clean:
 	rm -f $(TARGET) $(OBJS)
+
+.PHONY: clean valgrind
